@@ -1,0 +1,88 @@
+import React from 'react';
+import { ToolDef, RouteDef } from '../../lib/tools';
+
+export const tools: ToolDef[] = [
+  {
+    id: 'gpa-calculator',
+    name: 'GPA Calculator',
+    category: 'student',
+    description: 'Compute semester GPA from courses, credit hours and grades on the 4.0 scale.',
+    icon: 'GraduationCap',
+    path: '/student/gpa',
+    keywords: ['gpa', 'grade', 'semester', 'result', 'marks', 'percentage'],
+  },
+  {
+    id: 'cgpa-calculator',
+    name: 'CGPA Calculator',
+    category: 'student',
+    description: 'Combine semester GPAs and credit hours into your cumulative CGPA.',
+    icon: 'Award',
+    path: '/student/cgpa',
+    keywords: ['cgpa', 'cumulative', 'semester', 'overall', 'result'],
+  },
+  {
+    id: 'grade-calculator',
+    name: 'Grade Calculator',
+    category: 'student',
+    description: 'Turn obtained and total marks into a percentage, Pakistani grade and grade points.',
+    icon: 'Percent',
+    path: '/student/grade',
+    keywords: ['grade', 'percentage', 'marks', 'result', 'division'],
+  },
+  {
+    id: 'marks-required',
+    name: 'Marks Required',
+    category: 'student',
+    description: 'Find out exactly how many marks you still need to hit your target percentage.',
+    icon: 'Calculator',
+    path: '/student/marks-required',
+    keywords: ['marks required', 'target', 'percentage', 'needed', 'pass'],
+  },
+  {
+    id: 'attendance-calculator',
+    name: 'Attendance Calculator',
+    category: 'student',
+    description: 'Check your attendance percentage and see how many classes you can miss or must attend.',
+    icon: 'CalendarDays',
+    path: '/student/attendance',
+    keywords: ['attendance', 'classes', 'absent', 'present', 'hazri', '75%'],
+  },
+  {
+    id: 'credit-hours',
+    name: 'Credit Hour Calculator',
+    category: 'student',
+    description: 'Total your credit hours and estimate weekly study time with the 2x rule.',
+    icon: 'Clock',
+    path: '/student/credit-hours',
+    keywords: ['credit hours', 'courses', 'study hours', 'workload', 'subjects'],
+  },
+  {
+    id: 'student-planner',
+    name: 'Study Planner',
+    category: 'student',
+    description: 'Manage subjects, assignments and exams with deadlines, priorities and countdowns.',
+    icon: 'NotebookPen',
+    path: '/student/planner',
+    keywords: ['planner', 'subjects', 'assignments', 'exams', 'deadline', 'homework', 'parhai'],
+  },
+  {
+    id: 'study-timer',
+    name: 'Study Timer & Pomodoro',
+    category: 'student',
+    description: 'Focus timer with Pomodoro cycles. Sessions are logged automatically.',
+    icon: 'Timer',
+    path: '/student/timer',
+    keywords: ['timer', 'pomodoro', 'focus', 'study', 'stopwatch', 'concentration'],
+  },
+];
+
+export const routes: RouteDef[] = [
+  { path: '/student/gpa', element: React.lazy(() => import('./pages/GpaPage')) },
+  { path: '/student/cgpa', element: React.lazy(() => import('./pages/CgpaPage')) },
+  { path: '/student/grade', element: React.lazy(() => import('./pages/GradePage')) },
+  { path: '/student/marks-required', element: React.lazy(() => import('./pages/MarksRequiredPage')) },
+  { path: '/student/attendance', element: React.lazy(() => import('./pages/AttendancePage')) },
+  { path: '/student/credit-hours', element: React.lazy(() => import('./pages/CreditHoursPage')) },
+  { path: '/student/planner', element: React.lazy(() => import('./pages/PlannerPage')) },
+  { path: '/student/timer', element: React.lazy(() => import('./pages/StudyTimerPage')) },
+];

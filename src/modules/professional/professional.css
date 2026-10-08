@@ -1,0 +1,70 @@
+/* Professional module local styles — supplements the global design system. */
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* ---- Doc builder ---- */
+.doc-item-row {
+  display: grid; gap: 10px; align-items: end;
+  grid-template-columns: 1fr 72px 110px 76px 40px;
+  margin-bottom: 10px;
+}
+.doc-item-del { padding-bottom: 2px; }
+.totals-box {
+  margin-top: 16px; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;
+  background: var(--surface-2); max-width: 420px; margin-left: auto;
+}
+.totals-box > div { display: flex; justify-content: space-between; font-size: 14px; }
+.totals-box .grand { font-weight: 800; font-size: 17px; border-top: 1px solid var(--border); padding-top: 10px; }
+
+/* ---- Timers ---- */
+.timer-display {
+  font-variant-numeric: tabular-nums; font-weight: 800; letter-spacing: -1px;
+  font-size: clamp(44px, 10vw, 76px); text-align: center; line-height: 1.1;
+}
+.timer-sub { text-align: center; color: var(--muted); margin-top: 4px; }
+.count-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 14px; }
+.count-box {
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px 6px; text-align: center;
+}
+.count-box b { display: block; font-size: clamp(22px, 6vw, 34px); font-variant-numeric: tabular-nums; }
+.count-box span { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); }
+.lap-list { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.lap-list li {
+  display: flex; justify-content: space-between; align-items: center;
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; font-size: 14px;
+}
+.agenda-row { display: grid; grid-template-columns: 1fr 110px 40px; gap: 10px; align-items: end; margin-bottom: 10px; }
+.pomo-dots { display: flex; gap: 8px; justify-content: center; margin-top: 12px; }
+.pomo-dots i { width: 12px; height: 12px; border-radius: 50%; background: var(--border); }
+.pomo-dots i.done { background: var(--gold); }
+
+/* ---- Work hours week table ---- */
+.week-grid { display: grid; gap: 8px; }
+.week-row {
+  display: grid; grid-template-columns: 92px 1fr 1fr 96px; gap: 8px; align-items: center;
+}
+.week-row .day-name { font-weight: 700; font-size: 13px; }
+.week-total {
+  display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 14px;
+  border-top: 1px solid var(--border); padding-top: 14px;
+}
+
+.result-line { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed var(--border); font-size: 15px; }
+.result-line:last-child { border-bottom: 0; }
+.result-line strong.num { font-size: 16px; }
+
+@media (max-width: 640px) {
+  .doc-item-row { grid-template-columns: 1fr 1fr 1fr 40px; }
+  .doc-item-row .field:first-child { grid-column: 1 / -1; }
+  .week-row { grid-template-columns: 64px 1fr 1fr; }
+  .week-row .field:nth-child(4) { grid-column: 2 / 4; }
+  .totals-box { max-width: none; }
+  .agenda-row { grid-template-columns: 1fr 96px 40px; }
+}

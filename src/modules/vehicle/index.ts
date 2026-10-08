@@ -1,0 +1,88 @@
+import React from 'react';
+import { ToolDef, RouteDef } from '../../lib/tools';
+
+export const tools: ToolDef[] = [
+  {
+    id: 'fuel-cost',
+    name: 'Fuel Cost Calculator',
+    category: 'vehicle',
+    description: 'Estimate fuel needed and trip fuel cost from distance, mileage and fuel price.',
+    icon: 'Fuel',
+    path: '/vehicle/fuel-cost',
+    keywords: ['petrol', 'diesel', 'fuel cost', 'petrol kharcha', 'trip cost', 'mileage'],
+  },
+  {
+    id: 'mileage-calc',
+    name: 'Mileage Calculator',
+    category: 'vehicle',
+    description: 'Find your vehicle\u2019s real-world mileage (km per litre) from distance driven and fuel used.',
+    icon: 'Gauge',
+    path: '/vehicle/mileage',
+    keywords: ['km/l', 'average', 'fuel average', 'kitna deti hai', 'consumption'],
+  },
+  {
+    id: 'trip-planner',
+    name: 'Trip Planner',
+    category: 'vehicle',
+    description: 'Plan a road trip: fuel required, fuel cost, tolls, parking and per-person split.',
+    icon: 'MapPin',
+    path: '/vehicle/trip-planner',
+    keywords: ['trip', 'tour', 'safar', 'road trip', 'travel cost', 'per person'],
+  },
+  {
+    id: 'toll-split',
+    name: 'Toll & Cost Split',
+    category: 'vehicle',
+    description: 'Split toll plazas and shared travel costs fairly among passengers.',
+    icon: 'Split',
+    path: '/vehicle/toll-split',
+    keywords: ['toll', 'toll plaza', 'split', 'hissa', 'share', 'passengers'],
+  },
+  {
+    id: 'vehicle-expenses',
+    name: 'Vehicle Expenses',
+    category: 'vehicle',
+    description: 'Log fuel, service, repair and insurance spending — synced into Money expenses.',
+    icon: 'Car',
+    path: '/vehicle/fuel',
+    keywords: ['petrol expense', 'fuel log', 'service cost', 'repair', 'kharcha', 'maintenance cost'],
+  },
+  {
+    id: 'my-vehicles',
+    name: 'My Vehicles',
+    category: 'vehicle',
+    description: 'Keep your cars and bikes with plates and mileage; set a default for calculators.',
+    icon: 'Car',
+    path: '/vehicle/vehicles',
+    keywords: ['car', 'bike', 'gari', 'vehicles', 'plate number'],
+  },
+  {
+    id: 'maintenance',
+    name: 'Maintenance Tracker',
+    category: 'vehicle',
+    description: 'Track oil changes, tyres, insurance and services with due-date and odometer reminders.',
+    icon: 'Wrench',
+    path: '/vehicle/maintenance',
+    keywords: ['oil change', 'service', 'tyres', 'reminder', 'due', 'tuning'],
+  },
+  {
+    id: 'depreciation',
+    name: 'Vehicle Depreciation',
+    category: 'vehicle',
+    description: 'Estimate your vehicle\u2019s current value with straight-line or declining-balance depreciation.',
+    icon: 'TrendingDown',
+    path: '/vehicle/depreciation',
+    keywords: ['depreciation', 'resale', 'value', 'qimat', 'worth'],
+  },
+];
+
+export const routes: RouteDef[] = [
+  { path: '/vehicle/fuel-cost', element: React.lazy(() => import('./pages/FuelCostPage')) },
+  { path: '/vehicle/mileage', element: React.lazy(() => import('./pages/MileagePage')) },
+  { path: '/vehicle/trip-planner', element: React.lazy(() => import('./pages/TripPlannerPage')) },
+  { path: '/vehicle/toll-split', element: React.lazy(() => import('./pages/TollSplitPage')) },
+  { path: '/vehicle/fuel', element: React.lazy(() => import('./pages/VehicleExpensesPage')) },
+  { path: '/vehicle/vehicles', element: React.lazy(() => import('./pages/VehiclesPage')) },
+  { path: '/vehicle/maintenance', element: React.lazy(() => import('./pages/MaintenancePage')) },
+  { path: '/vehicle/depreciation', element: React.lazy(() => import('./pages/DepreciationPage')) },
+];

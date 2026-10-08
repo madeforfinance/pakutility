@@ -1,0 +1,88 @@
+import React from 'react';
+import { ToolDef, RouteDef } from '../../lib/tools';
+
+export const tools: ToolDef[] = [
+  {
+    id: 'hijri-calendar',
+    name: 'Hijri Calendar',
+    category: 'islamic',
+    description: 'Browse the Islamic calendar month by month with Gregorian equivalents.',
+    icon: 'Moon',
+    path: '/islamic/hijri',
+    keywords: ['islamic calendar', 'chand', 'hijri date', 'aaj chand ki tareekh', 'muslim calendar'],
+  },
+  {
+    id: 'prayer-times',
+    name: 'Prayer Times',
+    category: 'islamic',
+    description: 'Accurate prayer times for your location, calculated on-device — no internet needed.',
+    icon: 'Clock',
+    path: '/islamic/prayer',
+    keywords: ['namaz', 'prayer', 'azan', 'fajr', 'maghrib', 'isha', 'asr', 'dhuhr', 'namaz time'],
+  },
+  {
+    id: 'qibla',
+    name: 'Qibla Finder',
+    category: 'islamic',
+    description: 'Find the Qibla direction from your location with a visual compass dial.',
+    icon: 'Compass',
+    path: '/islamic/qibla',
+    keywords: ['qibla', 'kaaba', 'direction', 'rukh', 'compass'],
+  },
+  {
+    id: 'tasbeeh',
+    name: 'Tasbeeh Counter',
+    category: 'islamic',
+    description: 'Digital dhikr counter with targets, presets and a progress ring.',
+    icon: 'Hash',
+    path: '/islamic/tasbeeh',
+    keywords: ['dhikr', 'tasbih', 'zikr', 'counter', 'subhanallah', 'counter'],
+  },
+  {
+    id: 'fasting-tracker',
+    name: 'Fasting Tracker',
+    category: 'islamic',
+    description: 'Log kept, missed and qaza fasts with a month view and streak counter.',
+    icon: 'CalendarDays',
+    path: '/islamic/fasting',
+    keywords: ['roza', 'fast', 'fasting', 'qaza', 'ramadan fasts'],
+  },
+  {
+    id: 'ramadan-tracker',
+    name: 'Ramadan Tracker',
+    category: 'islamic',
+    description: '30-day Ramadan checklist — fasts, Taraweeh and Quran — with countdowns.',
+    icon: 'Moon',
+    path: '/islamic/ramadan',
+    keywords: ['ramadan', 'ramzan', 'taraweeh', 'sehri', 'iftar', 'eid countdown'],
+  },
+  {
+    id: 'islamic-events',
+    name: 'Islamic Events',
+    category: 'islamic',
+    description: 'Upcoming Islamic observances — Ramadan, Eids, Ashura — with dates and countdowns.',
+    icon: 'Calendar',
+    path: '/islamic/events',
+    keywords: ['eid', 'ashura', 'events', 'eid ul fitr', 'eid ul adha', 'milad', 'shab barat'],
+  },
+  {
+    id: 'pak-holidays',
+    name: 'Pakistan Holidays',
+    category: 'islamic',
+    description: 'Pakistan public holidays — fixed national days plus moon-sighting-based Islamic holidays.',
+    icon: 'Landmark',
+    path: '/islamic/holidays',
+    keywords: ['public holiday', 'chutti', 'holiday', 'pakistan day', 'independence day', 'eid holiday'],
+  },
+];
+
+export const routes: RouteDef[] = [
+  { path: '/islamic/hijri', element: React.lazy(() => import('./pages/HijriCalendarPage')) },
+  { path: '/islamic/prayer', element: React.lazy(() => import('./pages/PrayerTimesPage')) },
+  { path: '/islamic/qibla', element: React.lazy(() => import('./pages/QiblaPage')) },
+  { path: '/islamic/tasbeeh', element: React.lazy(() => import('./pages/TasbeehPage')) },
+  { path: '/islamic/fasting', element: React.lazy(() => import('./pages/FastingPage')) },
+  { path: '/islamic/ramadan', element: React.lazy(() => import('./pages/RamadanPage')) },
+  { path: '/islamic/events', element: React.lazy(() => import('./pages/IslamicEventsPage')) },
+  { path: '/islamic/holidays', element: React.lazy(() => import('./pages/HolidaysPage')) },
+];
